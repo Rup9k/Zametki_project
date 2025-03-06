@@ -1,53 +1,60 @@
-    <?php
-    require_once "functions.php";
-    $pageTitle = "Главная";
-    if (!isLoggedIn()) {
-        redirect("login.php");
-    }
+<?php
+require_once "functions.php";
+$pageTitle = "Главная";
+if (!isLoggedIn()) {
+    redirect("login.php");
+}
 
-    $username = $_SESSION["username"];
-    ?>
-    <?php include "header.php"; ?>
+$username = $_SESSION["username"];
+?>
 
-    <h1>Добро пожаловать, <?php echo htmlspecialchars($username); ?>!</h1>
+<?php include "header.php"; ?>
 
+<h1>Добро пожаловать, <?php echo htmlspecialchars($username); ?>!</h1>
+
+<div class="slider-container">
     <div class="slider">
-    <div class="slides">
-        <div class="slide fade">
-            <img src="img/zam_img1.png" alt="Слайд 1">
+        <div class="slide">
+            <img src="img/image_1.png" alt="Image 1">
         </div>
-        <div class="slide fade">
-            <img src="img/zam_img2.png" alt="Слайд 2">
+        <div class="slide">
+            <img src="img/image_2.png" alt="Image 2">
         </div>
-        <div class="slide fade">
-            <img src="img/zam_img3.png" alt="Слайд 3">
+        <div class="slide">
+            <img src="img/image_3.png" alt="Image 3">
         </div>
     </div>
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+    <button class="next" onclick="plusSlides(1)">&#10095;</button>
 </div>
 
+<a href="logout.php" class="button">Выйти</a>
 
-    <a href="logout.php" class="button">Выйти</a>
-   
 <script>
-let slideIndex = 0;
-showSlides();
+    let slideIndex = 1;
+    showSlides(slideIndex);
 
-function plusSlides(n) {
-    slideIndex += n;
-    showSlides();
-}
-
-function showSlides() {
-    let slides = document.getElementsByClassName("slide");
-    if (slideIndex >= slides.length) { slideIndex = 0; }
-    if (slideIndex < 0) { slideIndex = slides.length - 1; }
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
     }
-    slides[slideIndex].style.display = "block";  
-}
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("slide");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+    }
 </script>
-    </body>
-    </html>
+
+<?php include "footer.php"; ?>
+
+</body>
+</html>
