@@ -2,10 +2,11 @@
 
 Создать базу данных в PhpMyAdmin и ввести SQL запрос:
 
-CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255) UNIQUE NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    registration_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    profile_image BLOB
 );
