@@ -43,8 +43,18 @@ header h1 {
     color: black;
     margin: 0;
     font-size: 2em;
-    text-align: center; 
+    text-align: left; /* Выровняем влево */
     flex: 1; 
+    margin-left: 1rem; /* Отступ слева в rem */
+}
+
+.logo {
+    color: black; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.logo:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
 }
 
 form {
@@ -127,57 +137,68 @@ nav {
     background-color: #ff7700;
 }
 
-.slider {
-    position: relative;
-    max-width: 50%;
-    margin: auto;
-    overflow: hidden;
+/* Стили для изображения профиля */
+.profile-image {
+    width: 150px; /* Установите желаемую ширину */
+    height: auto; /* Высота будет пропорциональна ширине */
+    border-radius: 50%; /* Округлите изображение для эффекта круга */
+    border: 2px solid #ff7700; /* Добавьте обводку, если нужно */
+    margin-top: 10px; /* Добавьте отступ сверху */
+    display: block; /* Центрируем изображение */
+    margin-left: auto; /* Центрируем изображение */
+    margin-right: auto; /* Центрируем изображение */
 }
 
-.slides {
+/* Стили для слайдера */
+.slider-container {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
 .slide {
     min-width: 100%;
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
     box-sizing: border-box;
 }
 
-img {
+.slide img {
     width: 100%;
     height: auto;
+    display: block;
 }
 
+/* Стили для кнопок "Предыдущий" и "Следующий" */
 .prev, .next {
-    background-color: #ffee00;
+    cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;
+    margin-top: -22px;
     padding: 16px;
-    color: black;
+    color: white;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
     user-select: none;
-    transform: translateY(-50%); 
-}
-
-.prev {
-    left: 20px; 
+    background-color: rgba(0,0,0,0.8);
+    border: none;
 }
 
 .next {
-    right: 20px; 
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 50%; 
-    padding: 16px; 
+    background-color: rgba(0,0,0,0.6);
 }
 
 /* Для мобильных устройств */
@@ -195,7 +216,7 @@ img {
         width: 100%; 
     }
 
-    .slider {
+    .slider-container {
         max-width: 100%; 
     }
 
@@ -215,7 +236,7 @@ img {
         width: 80%; 
     }
 
-    .slider {
+    .slider-container {
         max-width: 80%; 
     }
 
