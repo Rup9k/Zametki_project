@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 $host = "localhost";
 $db_user = "root";
@@ -28,12 +30,12 @@ function escape($data) {
 }
 
 function redirect($url) {
-  header("Location: " . $url);
-  exit;
+    header("Location: " . $url);
+    exit;
 }
 
 function isLoggedIn() {
-  return isset($_SESSION['user_id']);
+    return isset($_SESSION['user_id']);
 }
 
 ?>
