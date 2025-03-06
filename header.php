@@ -7,7 +7,7 @@
 <body>
 
 <header>
-    <h1>Zametki</h1>
+    <h1><a href="index.php" class="logo">Zametki</a></h1>
     <nav>
         <?php if (isLoggedIn()): ?>
             <a href="profile.php" class="button">Личный кабинет</a>
