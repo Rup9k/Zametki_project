@@ -1,8 +1,6 @@
 <footer>
     <p>
-        &copy; Zametki |
-        <a href="about.php">О нас</a> |
-        <a href="contact.php">Контакты</a>
+        &copy; Zametki
     </p>
 </footer>
 
