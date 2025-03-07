@@ -79,6 +79,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <p>Уже зарегистрированы? <a href="login.php">Войти</a></p>
 </div>
 
+<?php include "footer.php"; ?>
+
 </div>
 </body>
 </html>
