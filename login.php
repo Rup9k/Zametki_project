@@ -60,7 +60,7 @@ $pageTitle = "Вход";
     <input type="email" id="email" name="email" value="<?php echo isset($email) ? htmlspecialchars($email) : ''; ?>"><br>
 
     <label for="password">Пароль:</label>
-    <input type="password" id="password" name="password"><br>
+    <input type="password" id="password" name="password">
 
     <div class="center-link">
     <p>Еще не зарегистрированы? <a href="register.php">Зарегистрироваться</a></p>
@@ -68,6 +68,8 @@ $pageTitle = "Вход";
 
     <button type="submit">Войти</button>
 </form>
+
+<?php include "footer.php"; ?>
 
 </div>
 </body>
