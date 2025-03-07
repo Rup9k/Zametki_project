@@ -28,8 +28,6 @@ $username = $_SESSION["username"];
     <button class="next" onclick="plusSlides(1)">&#10095;</button>
 </div>
 
-<a href="logout.php" class="button">Выйти</a>
-
 <script>
     let slideIndex = 1;
     showSlides(slideIndex);
